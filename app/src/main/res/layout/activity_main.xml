@@ -7,12 +7,21 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar_default"/>
 
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:max="100"/>
+
     <LinearLayout
         android:id="@+id/ll_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/seekBar"
-        android:layout_below="@+id/toolbar"
+        android:layout_above="@id/seekBar"
+        android:layout_below="@id/toolbar"
         android:layout_marginBottom="10dp"
         android:orientation="horizontal">
 
@@ -22,22 +31,22 @@
             android:layout_height="match_parent"
             android:layout_marginRight="8dp"
             android:layout_weight="1.5"
-
             android:orientation="vertical"
             android:weightSum="2">
 
-            <LinearLayout
+            <View
+                android:id="@+id/view_1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="#6A78B8"/>
+                android:layout_weight="1"/>
 
-            <LinearLayout
+            <View
+                android:id="@+id/view_2"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#D64F98"/>
+                android:layout_weight="1"/>
+
         </LinearLayout>
 
         <LinearLayout
@@ -47,35 +56,30 @@
             android:orientation="vertical"
             android:weightSum="3">
 
-            <LinearLayout
+            <View
+                android:id="@+id/view_3"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
-                android:layout_weight="1"
-                android:background="#A41D21"/>
+                android:layout_weight="1"/>
 
-            <LinearLayout
+            <View
+                android:id="@+id/view_4"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_marginBottom="10dp"
                 android:layout_weight="1"
                 android:background="#fff"/>
 
-            <LinearLayout
+            <View
+                android:id="@+id/view_5"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:background="#283A98"/>
+                android:layout_weight="1"/>
         </LinearLayout>
 
 
     </LinearLayout>
 
-    <SeekBar
-        android:id="@+id/seekBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>
