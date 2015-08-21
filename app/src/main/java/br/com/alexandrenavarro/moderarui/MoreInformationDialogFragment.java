@@ -12,6 +12,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.TextView;
 
 /**
@@ -28,12 +29,10 @@ public class MoreInformationDialogFragment extends DialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
-        View view = getActivity().getLayoutInflater().inflate(android.R.layout.select_dialog_item, null);
-        TextView tvDialog = (TextView) view.findViewById(android.R.id.text1);
-        tvDialog.setText("Click below to learn more!");
+        View view = getActivity().getLayoutInflater().inflate(R.layout.dialog_textview, null);
 
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity()).setView(view);
-        builder.setTitle("Inspired by works of artists such as Piet Mondrian and Ben Nicholson.");
+        //builder.setTitle("Inspired by works of artists such as Piet Mondrian and Ben Nicholson.");
         builder.setPositiveButton("Visit MOMA", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
@@ -50,6 +49,7 @@ public class MoreInformationDialogFragment extends DialogFragment {
         });
 
 
+
         return builder.create();
     }
 
@@ -59,5 +59,11 @@ public class MoreInformationDialogFragment extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         getDialog().setCanceledOnTouchOutside(true);
         return super.onCreateView(inflater, container, savedInstanceState);
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setStyle(DialogFragment.STYLE_NO_TITLE, R.style.AppTheme);
     }
 }
